@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.constraintlayout.compose.ConstraintLayout
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -21,7 +22,7 @@ private fun LayoutPreview() {
 
 @Composable
 fun NewFrameLayout() {
-    CustomLinearLayoutVertical()
+    CustomConstraintLayout()
 }
 
 @Composable
@@ -61,5 +62,35 @@ fun CustomLinearLayoutVertical() {
 
 @Composable
 fun CustomConstraintLayout() {
-//    ConstraintLayout()
+    ConstraintLayout(modifier = Modifier.fillMaxSize()) {
+        val (normalA, normalB, filledF, container) = createRefs()
+        Text(
+            text = "Normal A",
+            modifier = Modifier.constrainAs(normalA) {
+                top.linkTo(parent.top)
+            }
+        )
+        Text(
+            text = "Normal B",
+            modifier = Modifier.constrainAs(normalB) {
+                top.linkTo(normalA.bottom)
+            }
+        )
+        TextF(modifier = Modifier.constrainAs(filledF) {
+            top.linkTo(normalB.top)
+            start.linkTo(normalB.end)
+        })
+        Row(modifier = Modifier.constrainAs(container) { top.linkTo(normalB.bottom) }) {
+            ExampleText()
+            TextF()
+        }
+    }
 }
+
+@Composable
+fun TextF(modifier: Modifier = Modifier) = Text(
+    text = "Filled F",
+    modifier = Modifier
+        .background(Color.LightGray)
+        .then(modifier)
+)

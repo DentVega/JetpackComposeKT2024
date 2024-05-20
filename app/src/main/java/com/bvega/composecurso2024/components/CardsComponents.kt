@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.bvega.composecurso2024.components.NewChipComponent
 import com.bvega.composecurso2024.components.NewImageViewComponent
 import com.bvega.composecurso2024.components.NewOutlinedTextFieldComponent
 import com.bvega.composecurso2024.components.NewTextField
@@ -36,6 +37,7 @@ fun newCardC() {
             NewTextField()
             NewOutlinedTextFieldComponent()
             NewImageViewComponent()
+            NewChipComponent()
         }
     }
 }

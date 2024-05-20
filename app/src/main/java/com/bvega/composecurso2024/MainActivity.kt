@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FloatingActionButton
@@ -12,6 +13,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.bvega.composecurso2024.ui.theme.ComposeCurso2024Theme
 
@@ -24,6 +26,17 @@ class MainActivity : ComponentActivity() {
                 CustomSurface()
             }
         }
+    }
+}
+
+@Composable
+fun CustomSurface() {
+//    Surface(modifier = Modifier.fillMaxSize()) {
+    Surface(modifier = Modifier
+        .background(Color.White)
+        .fillMaxSize()) {
+//        NewFrameLayout()
+        TamaniosCompose()
     }
 }
 
@@ -41,13 +54,6 @@ fun CustomScaffold() {
 }
 
 @Composable
-fun CustomSurface() {
-    Surface(modifier = Modifier.fillMaxSize()) {
-        NewFrameLayout()
-    }
-}
-
-@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!", modifier = modifier
@@ -58,6 +64,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     ComposeCurso2024Theme {
-        CustomScaffold()
+        CustomSurface()
     }
 }

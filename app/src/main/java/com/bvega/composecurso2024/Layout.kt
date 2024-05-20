@@ -84,7 +84,8 @@ fun CustomConstraintLayout() {
             top.linkTo(normalB.top)
             start.linkTo(normalB.end)
         })
-        Row(modifier = Modifier.constrainAs(container) { top.linkTo(normalB.bottom)
+        Row(modifier = Modifier.constrainAs(container) {
+            top.linkTo(normalB.bottom)
             start.linkTo(normalA.start)
         }) {
 //            ExampleText()
@@ -100,3 +101,12 @@ fun TextF(modifier: Modifier = Modifier) = Text(
         .background(Color.LightGray)
         .then(modifier)
 )
+
+@Composable
+fun TextANT(modifier: Modifier = Modifier) =
+    Text(text = "Curso Android ANT!", modifier = modifier.background(Color.Cyan))
+
+@Composable
+fun TextFrg(modifier: Modifier = Modifier) {
+    Text(text = "Frogames!", modifier = modifier.background(Color.LightGray))
+}

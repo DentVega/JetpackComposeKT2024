@@ -68,20 +68,26 @@ fun CustomConstraintLayout() {
             text = "Normal A",
             modifier = Modifier.constrainAs(normalA) {
                 top.linkTo(parent.top)
+                bottom.linkTo(parent.bottom)
+                start.linkTo(parent.start)
+                end.linkTo(parent.end)
             }
         )
         Text(
             text = "Normal B",
             modifier = Modifier.constrainAs(normalB) {
                 top.linkTo(normalA.bottom)
+                start.linkTo(normalA.start)
             }
         )
         TextF(modifier = Modifier.constrainAs(filledF) {
             top.linkTo(normalB.top)
             start.linkTo(normalB.end)
         })
-        Row(modifier = Modifier.constrainAs(container) { top.linkTo(normalB.bottom) }) {
-            ExampleText()
+        Row(modifier = Modifier.constrainAs(container) { top.linkTo(normalB.bottom)
+            start.linkTo(normalA.start)
+        }) {
+//            ExampleText()
             TextF()
         }
     }

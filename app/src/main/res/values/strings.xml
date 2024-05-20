@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ComposeCurso2024</string>
+    <string name="app_name" translatable="false">ComposeCurso2024</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lifecycle">Lifecycle</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ComposeCursos2024</string>
+    <string name="hello_world">Hola Mundo!</string>
+    <string name="lifecycle">Ciclo de vida</string>
+</resources>

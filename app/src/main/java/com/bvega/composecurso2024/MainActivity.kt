@@ -1,6 +1,8 @@
 package com.bvega.composecurso2024
 
+import NewCardComponent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.bvega.composecurso2024.components.NewTextView2
 import com.bvega.composecurso2024.customModifier.NewClick
 import com.bvega.composecurso2024.customModifier.TamaniosCompose
 import com.bvega.composecurso2024.ui.theme.ComposeCurso2024Theme
@@ -41,7 +44,9 @@ fun CustomSurface() {
     ) {
 //        NewFrameLayout()
 //        TamaniosCompose()
-        NewClick()
+//        NewClick()
+//        NewTextView2()
+        NewCardComponent()
     }
 }
 
@@ -65,7 +70,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, locale = "es")
 @Composable
 fun GreetingPreview() {
     ComposeCurso2024Theme {

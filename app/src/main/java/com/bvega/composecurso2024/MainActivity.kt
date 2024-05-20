@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.bvega.composecurso2024.customModifier.NewClick
+import com.bvega.composecurso2024.customModifier.TamaniosCompose
 import com.bvega.composecurso2024.ui.theme.ComposeCurso2024Theme
 
 class MainActivity : ComponentActivity() {
@@ -32,11 +34,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CustomSurface() {
 //    Surface(modifier = Modifier.fillMaxSize()) {
-    Surface(modifier = Modifier
-        .background(Color.White)
-        .fillMaxSize()) {
+    Surface(
+        modifier = Modifier
+            .background(Color.White)
+            .fillMaxSize()
+    ) {
 //        NewFrameLayout()
-        TamaniosCompose()
+//        TamaniosCompose()
+        NewClick()
     }
 }
 
